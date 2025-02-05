@@ -27,7 +27,7 @@
     "topgg-autoposter": "^2.0.2"
   },
   "devDependencies": {
-    "@tryforge/forgescript": "^1.4.0",
+    "@tryforge/forgescript": "^2.1.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.10.6",
     "dotenv": "^16.3.1",

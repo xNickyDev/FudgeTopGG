@@ -5,7 +5,7 @@ import { ForgeTopGG } from "..";
 export default new NativeFunction({
     name: "$hasVoted",
     version: "1.0.0",
-    description: "Checks whether an user has voted a bot",
+    description: "Checks whether a user has voted a bot",
     brackets: true,
     args: [
         {

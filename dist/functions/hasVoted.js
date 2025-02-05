@@ -6,7 +6,7 @@ const __1 = require("..");
 exports.default = new forgescript_1.NativeFunction({
     name: "$hasVoted",
     version: "1.0.0",
-    description: "Checks whether an user has voted a bot",
+    description: "Checks whether a user has voted a bot",
     brackets: true,
     args: [
         {
