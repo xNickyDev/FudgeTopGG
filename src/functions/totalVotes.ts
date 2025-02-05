@@ -1,6 +1,6 @@
-import { ArgType, NativeFunction } from "@tryforge/forgescript";
-import { fetch } from "undici"
-import { ForgeTopGG } from "..";
+import { ArgType, NativeFunction } from "@tryforge/forgescript"
+import { ForgeTopGG } from ".."
+import { Api } from "@top-gg/sdk"
 
 export default new NativeFunction({
     name: "$totalVotes",
@@ -9,14 +9,6 @@ export default new NativeFunction({
     unwrap: false,
     output: ArgType.Boolean, 
     async execute(ctx) {
-        const req: { 
-            points: number
-            monthlyPoints: number
-         } = await fetch(`https://top.gg/api/bots/${ctx.client.user.id}`, {
-            headers: {
-                authorization: ctx.getExtension(ForgeTopGG, true)["options"].token
-            }
-        }).then(x => x.json() as any)
-        return this.success(req.points)
+        return this.success((await new Api(ctx.getExtension(ForgeTopGG, true)["options"].token).getBot(ctx.client.user.id).catch(ctx.noop))?.points)
     },
 })

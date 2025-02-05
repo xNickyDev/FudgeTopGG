@@ -6,6 +6,7 @@ const __1 = require("..");
 const BotInfo_1 = require("../properties/BotInfo");
 exports.default = new forgescript_1.NativeFunction({
     name: "$botInfo",
+    version: "1.1.2",
     description: "Returns information about the bot",
     brackets: true,
     args: [
